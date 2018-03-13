@@ -1,0 +1,7 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	display: block;
+    margin: 8px;
+    background-image: url("testmin.png");
+}

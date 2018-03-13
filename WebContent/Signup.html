@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="signupStyle.css" rel="stylesheet">
+<meta charset="ISO-8859-1">
+<title>Signup</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+<script>
+function validateForm() {
+    var x = document.forms["signupForm"]["username1"].value;
+    var y = document.forms["signupForm"]["password1"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    } else if (x.length >= 20) {
+    	alert("Name too long. Must be less than 20 characters.");
+    	return false;
+    } else if (x.indexOf('\\') != -1) {
+		alert("Backslash character is not allowed.");
+		return false;
+	}
+
+    if (y == "") {
+        alert("Password must be filled out");
+        return false;
+    } else if (y.length >= 20) {
+    	alert("Password too long. Must be less than 20 characters.");
+        return false;
+    } else if (x.indexOf('\\') != -1) {
+		alert("Backslash character is not allowed.");
+		return false;
+	}
+
+    var z = document.forms["signupForm"]["address"].value;
+    if (z != "")
+    {
+    	if (z.indexOf('@') == -1)
+    	{
+    		 alert("Email address not valid (no @).");
+    	     return false;
+    	}
+
+    	if (z.indexOf('@') == 0)
+    	{
+    		alert("Email address cannot start with '@' symbol.");
+    		return false;
+    	}
+
+    	if (z.length <= 4)
+    	{
+    		 alert("Invalid email address (too small in length)");
+    	     return false;
+    	}
+
+    	if (z.length >= 50)
+    	{
+    		 alert("Email must be less than 50 characters.");
+    	     return false;
+    	}
+
+    	var count = 0;
+    	for (var i = 0; i <= z.length; i++)
+    	{
+    		if (z[i] == '@')
+    		{
+    			count++;
+    		}
+    	}
+
+    	if (count > 1)
+    	{
+    		alert("Email address cannot contain more than one @ character.");
+    		return false;
+    	}
+
+    	if (z.indexOf('\\') != -1) {
+    		alert("Backslash character is not allowed.");
+    		return false;
+    	}
+    }
+    return true;
+}
+</script>
+</head>
+<body>
+
+<div class="header">
+  <div><a href="index.html  ">&nbsp&nbspHOME&nbsp&nbsp&nbsp</a></div>
+  <div><a href="about.html">ABOUT&nbsp&nbsp&nbsp</a></div>
+  <div><a>HELP&nbsp&nbsp&nbsp</a></div>
+  <div><a href="Signup.html">SIGN UP&nbsp&nbsp&nbsp</a></div>
+</div>
+
+<br>
+
+<div class="missionClass">
+<p class="mission">Mark Management allows you to keep track of your grades and test how different weighted grades will affect your average.<br><br><span style="margin-left: 200px;">Access and manage your grades anytime anywhere.</span></p>
+
+<img src="phoneIcon.png"/><img src="laptopIcon.png"/><img src="tabletIcon.png"/>
+</div>
+
+<div class="wholeForm">
+  <form name="signupForm" onsubmit="return validateForm()" action="UserServlet" method="post">
+    <div class="signupStuff">
+      <p>Username (*)</p><input autocomplete="off" type="text" name="username1"/> <br/><br><br>
+      <p>Password (*)</p><input autocomplete="off" type="password" name="password1"/> <br/><br><br>
+      <p>Email (optional)</p><input type="text" name="address"/> <br/><br><br>
+    </div>
+      <input type="submit" value="Sign Up"/>
+  </form>
+</div>
+
+<footer>
+  <p class="footer">Copyright &copy 2018 Giavinh Lam. All rights reserved.</p>
+</footer>
+
+<br>
+</body>
+</html>

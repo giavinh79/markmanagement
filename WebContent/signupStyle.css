@@ -1,0 +1,117 @@
+@CHARSET "ISO-8859-1";
+
+body {
+  background-image: url("signupBack3.png");
+  margin-top: 6px;
+  margin-left: 0px;
+  margin-right: 0px;
+  text-align: center;
+  background-color: rgb(35, 176, 168);
+  background-size: cover;
+}
+
+.header {
+  display: flex;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Trebuchet MS;
+  color: #004562;
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 7px 10px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+
+form div input {
+  float: right;
+}
+
+form div p {
+  font-size: 23px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: black;
+  font-family: Georgia;
+}
+
+.wholeForm {
+  float: right;
+  padding-right: 70px;
+}
+
+.signupStuff {
+
+}
+
+p {
+  font-size: 35px;
+  color: black;
+}
+
+.missionClass {
+  float: left;
+  height: 20px;
+  display: none;
+}
+
+#missionState {
+  padding-left: 0em;
+}
+
+.mission {
+  padding-left: 3em;
+  padding-right: 9em;
+  margin-right: 50px;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #40ad44;
+    color: white;
+    padding: 5px 10px;
+    font-size: 25px;
+    margin: -2px 0;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+div a {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Trebuchet MS;
+  color: #004562;
+  text-decoration:  none;
+}
+
+.footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+}
+
+div a:hover {
+  color: #096c96;
+}
+
+@media screen and (min-width: 1000px) {
+  .missionClass { display: block; }
+}
+
+.header div:last-child {
+  margin-left: auto;
+}
+
+footer p {
+  font-size: 11px;
+}

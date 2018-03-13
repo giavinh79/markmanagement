@@ -1,0 +1,82 @@
+@CHARSET "ISO-8859-1";
+
+body {
+  display: block;
+  margin-top: 6px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background-image: url("gradientBack.png");
+}
+
+.header {
+  display: flex;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Trebuchet MS;
+  color: #004562;
+  background-color: #4c3e3e;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.header div:last-child {
+  margin-left: auto;
+}
+
+div a {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Trebuchet MS;
+  color: white;
+  text-decoration:  none;
+}
+
+div a:hover {
+  color: #096c96;
+}
+
+input[type=submit] {
+	width: 77px;
+}
+
+#year {
+	margin-bottom: 6px;
+}
+
+input {
+	margin-bottom: 4px;
+}
+
+#test12 {
+	float: left;
+  	padding-left: 0.5em;
+	margin-right: 0.5em;
+}
+
+#testerino {
+	clear: both;
+}
+
+.tableO {
+	padding-left: 1em;
+	padding-right: 1em;
+	float: left;
+}
+
+#blah {
+	padding-left: 1em;
+	display: none;
+}
+
+
+.footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+	text-align: center;
+	background-size: auto;
+}
+
+footer p {
+  font-size: 11px;
+}

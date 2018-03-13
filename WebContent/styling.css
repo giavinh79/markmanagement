@@ -1,0 +1,187 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	display: block;
+	margin-top: 6px;
+	margin-left: 0px;
+	margin-right: 0px;
+	background-image: url("exampleBackground.png");
+	background-color: rgb(35, 176, 168);
+	background-position: center 0px;
+	background-size: cover;
+}
+
+h1, h2 {
+	font-family: Arial;
+	color: BLACK;
+	text-align: center;
+	margin-top: 5px;
+	font-size: 1.4rem;
+}
+
+div img {
+	display: block;
+	margin: auto;
+	max-width: 100%;
+	height: auto;
+	width: auto\9;
+}
+
+input[type=text], input[type=password] {
+    width: 25%;
+    padding: 5px 10px;
+    margin: 2px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+
+
+input[type=submit] {
+    width: 25%;
+    background-color: #40ad44;
+    color: white;
+    padding: 5px 10px;
+    font-size: 15px;
+    margin: 2px 0;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-bottom: -0.5em;
+}
+
+.header {
+  display: flex;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Trebuchet MS;
+  color: #004562;
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+div a {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Trebuchet MS;
+  color: #004562;
+  text-decoration:  none;
+}
+
+div a:hover {
+  color: #096c96;
+}
+
+.header div:last-child {
+  margin-left: auto;
+}
+
+
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+form {
+  resize: none;
+}
+
+.most {
+	text-align: center;
+}
+
+
+td {
+	text-align: center;
+}
+
+.first {
+}
+
+.second {
+	position: relative;
+}
+
+.footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+}
+
+footer p {
+  font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	font-family: Trebuchet;
+	color: black;
+}
+
+p {
+  font-weight: bolder;
+  color: #840f0f;
+  font-family: Tahoma;
+}
+
+@media screen and (min-width: 300px) {
+  body {
+		display: block;
+		margin-top: 6px;
+		margin-left: 0px;
+		margin-right: 0px;
+		background-image: url("phoneWallpaper.png");
+		background-color: rgb(35, 176, 168);
+		background-position: center 0px;
+		background-size: cover;
+	}
+
+	h1, h2 {
+		font-family: Arial;
+		color: BLACK;
+		text-align: center;
+		margin-top: 5px;
+	}
+}
+
+@media screen and (min-width: 1100px) {
+  body {
+	  display: block;
+	  margin-top: 6px;
+	  margin-left: 0px;
+	  margin-right: 0px;
+	  background-image: url("higherres.png");
+	  background-color: rgb(35, 176, 168);
+	  background-size: cover;
+	  background-position: bottom 0px;
+	  background-repeat: no-repeat;
+	}
+
+	h1, h2 {
+		font-family: Arial;
+		color: BLACK;
+		text-align: center;
+		margin-top: 5px;
+	}
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : portrait) {
+	body {
+		display: block;
+	  	margin-top: 6px;
+	  	margin-left: 0px;
+	  	margin-right: 0px;
+	  	background-image: url("iphoneWallpaper.png");
+		background-position: center 0px;
+		background-color: rgb(35, 176, 168);
+		background-size: cover;
+	}
+
+	div img {
+		width: 1100px;
+	}
+
+	h2 {
+		font-size: 50px;
+	}
+}

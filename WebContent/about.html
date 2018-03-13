@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="signupStyle.css" rel="stylesheet">
+<meta charset="ISO-8859-1">
+<title>About Page</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+<script>
+function validateForm() {
+    var x = document.forms["signupForm"]["username1"].value;
+    var y = document.forms["signupForm"]["password1"].value;
+    if (x == "") {
+        alert("Name must be filled out");fs
+        return false;
+    } else if (x.length >= 20) {
+    	alert("Name too long. Must be less than 20 characters.");
+    	return false;
+    } else if (x.indexOf('\\') != -1) {
+		alert("Backslash character is not allowed.");
+		return false;
+	}
+
+    if (y == "") {
+        alert("Password must be filled out");
+        return false;
+    } else if (y.length >= 20) {
+    	alert("Password too long. Must be less than 20 characters.");
+        return false;
+    } else if (x.indexOf('\\') != -1) {
+		alert("Backslash character is not allowed.");
+		return false;
+	}
+
+    var z = document.forms["signupForm"]["address"].value;
+    if (z != "")
+    {
+    	if (z.indexOf('@') == -1)
+    	{
+    		 alert("Email address not valid (no @).");
+    	     return false;
+    	}
+
+    	if (z.indexOf('@') == 0)
+    	{
+    		alert("Email address cannot start with '@' symbol.");
+    		return false;
+    	}
+
+    	if (z.length <= 4)
+    	{
+    		 alert("Invalid email address (too small in length)");
+    	     return false;
+    	}
+
+    	if (z.length >= 50)
+    	{
+    		 alert("Email must be less than 50 characters.");
+    	     return false;
+    	}
+
+    	var count = 0;
+    	for (var i = 0; i <= z.length; i++)
+    	{
+    		if (z[i] == '@')
+    		{
+    			count++;
+    		}
+    	}
+
+    	if (count > 1)
+    	{
+    		alert("Email address cannot contain more than one @ character.");
+    		return false;
+    	}
+
+    	if (z.indexOf('\\') != -1) {
+    		alert("Backslash character is not allowed.");
+    		return false;
+    	}
+    }
+    return true;
+}
+</script>
+</head>
+<body>
+
+<div class="header">
+  <div><a href="index.html  ">&nbsp&nbspHOME&nbsp&nbsp&nbsp</a></div>
+  <div><a>ABOUT&nbsp&nbsp&nbsp</a></div>
+  <div><a>HELP&nbsp&nbsp&nbsp</a></div>
+  <div><a href="Signup.html">SIGN UP&nbsp&nbsp&nbsp</a></div>
+</div>
+
+<br>
+
+<div style="padding: 10px 10px 10px 10px">
+<p>This website was created in the Eclipse IDE and Atom Text Editor using HTML, CSS, JavaScript, mySQL, and Java (server-side, runs on Apache Tomcat v7).<br><br><span style="margin-left: 200px;"></span></p>
+</div>
+
+<footer>
+  <p class="footer">Copyright &copy 2018 Giavinh Lam. All rights reserved.</p>
+</footer>
+
+<br>
+</body>
+</html>
