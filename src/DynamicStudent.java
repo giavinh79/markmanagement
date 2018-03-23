@@ -52,7 +52,7 @@ public class DynamicStudent extends HttpServlet {
 			//if (nameLogged.equals("") || nameLogged == null)
 			//	query = "SELECT student_id FROM student WHERE user_name LIKE '" + nameLogged + "'";
 			//else
-				query = "SELECT student_id FROM student WHERE user_name LIKE '" + VerifyLogin.user + "'";
+			query = "SELECT student_id FROM student WHERE user_name LIKE '" + VerifyLogin.user + "'";
 
 			ResultSet r = state.executeQuery(query);
 			int userID = 0;

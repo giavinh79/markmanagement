@@ -146,6 +146,40 @@ function parseYears(arrayString) {
 	return yearArray;
 }
 
+function fillStatistics() {
+	var table = document.getElementById("printTable");
+	var avgDiv, meanDiv;
+	var orderedGrades = []; //dynamic array
+	avgDiv = document.getElementById("average");
+	meanDiv = document.getElementById("median");
+	var average = 0, mean = 0;
+	for (var i = 1, row; row = table.rows[i]; i++) {
+		for (var j = 0, col; col = row.cells[j]; j++) {
+			if (j == 1)
+		   	{
+		   		//alert(row.cells[j].innerHTML);
+		   		//alert(row.cells[j].innerHTML);
+		   		average += parseInt(row.cells[j].innerHTML);
+		   		orderedGrades.push(parseInt(row.cells[j].innerHTML));
+		   	}
+	     //iterate through columns
+	     //columns would be accessed using the "col" variable assigned in the for loop
+	   	}
+	}
+	average = average / table.rows[0].cells.length;
+	avgDiv.innerHTML = average;
+	orderedGrades.sort();
+	//alert(orderedGrades);
+	if (orderedGrades.length % 2 == 0)
+	{
+		meanDiv.innerHTML = (orderedGrades[orderedGrades.length / 2] + orderedGrades[orderedGrades.length / 2 - 1]) / 2;
+	}
+	else 
+	{
+		meanDiv.innerHTML = orderedGrades[orderedGrades.length / 2];
+	}
+}
+
 function printtoTable(c, g, y) {
 	if (c.length < 2) //test for courses with 1 letter
 	{
@@ -213,18 +247,23 @@ function printtoTable(c, g, y) {
 	</form>
 </div><br>
 
-	<script>var foo = '${test}';</script>
-	<script>var array = '${gradesList}';</script>
+<br>
+<div style="height: 200px; width: 200px; background-color: white; color: black; margin-left: 200px;">
+	Average: <div id="average" style="color:black;"></div><br>
+	Median: <div id="median" style="color:black;"></div><br>
+</div>
+
 	<script>
-var gradeA = parseGrades('${test}');
-</script>
-	<script>
-var yearA = parseYears('${year}');
-</script>
+		var foo = '${test}';
+		var array = '${gradesList}';
+		var gradeA = parseGrades('${test}');
+		var yearA = parseYears('${year}');
+	</script>
 
 	<script>printtoTable('${courses}', gradeA, yearA);</script>
 
 	<script>
+		fillStatistics();
 /*
 	var string = "";
 	for (var z = 0; z < array.length; z++)
@@ -233,7 +272,7 @@ var yearA = parseYears('${year}');
 	} //document.getElementById("demo").innerHTML = string;
 	document.getElementById("demo").innerHTML = '${test}';
 	*/
-</script>
+	</script>
 
 	<p id="blah">To do: Be able to enter a grade and a course. Have statistics
 		(Average) somewhere. Be able to edit x course and add in weight

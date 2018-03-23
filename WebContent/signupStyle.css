@@ -6,8 +6,9 @@ body {
   margin-left: 0px;
   margin-right: 0px;
   text-align: center;
+  background-repeat: no-repeat;
   background-color: rgb(35, 176, 168);
-  background-size: cover;
+  background-size: calc(130vw * 0.9) 100vh;
 }
 
 .header {
@@ -46,11 +47,15 @@ form div p {
 
 .wholeForm {
   float: right;
-  padding-right: 70px;
+  padding: 33px;
+  margin-top: 15px;
+  margin-right: 50px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
 }
 
 .signupStuff {
-
+  margin-top: -10px;
 }
 
 p {
@@ -59,7 +64,7 @@ p {
 }
 
 .missionClass {
-  float: left;
+  /* float: left; */
   height: 20px;
   display: none;
 }
@@ -98,6 +103,7 @@ div a {
   position:absolute;
   bottom:0;
   width:100%;
+  z-index: -1;
 }
 
 div a:hover {
@@ -105,11 +111,37 @@ div a:hover {
 }
 
 @media screen and (min-width: 1000px) {
-  .missionClass { display: block; }
+  .missionClass { display: block; float: left;}
+}
+
+@media screen and (max-width: 600px) {
+  body {
+		display: block;
+	  margin-top: 6px;
+	  margin-left: 0px;
+	  margin-right: 0px;
+	  background-image: url("phoneWallpaperSignup.png");
+  	background-repeat: no-repeat;
+		background-color: rgb(35, 176, 168);
+		background-size: 100vw 100vh;
+	}
+
+  .wholeForm {
+    float: none;
+    width: 55%;
+    height: 50%;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    z-index: 100;
+    margin-top: 20px;
+  }
 }
 
 .header div:last-child {
   margin-left: auto;
+  /* color: #096c96; */
 }
 
 footer p {
