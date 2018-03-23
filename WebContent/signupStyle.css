@@ -48,8 +48,8 @@ form div p {
 .wholeForm {
   float: right;
   padding: 33px;
-  margin-top: 15px;
-  margin-right: 50px;
+  margin-top: 10px;
+  margin-right: 45px;
   background-color: #f2f2f2;
   border-radius: 5px;
 }
@@ -64,20 +64,21 @@ p {
 }
 
 .missionClass {
-  /* float: left; */
   height: 20px;
-  display: none;
+  display: block;
+  float: left;
 }
 
-#missionState {
-  padding-left: 0em;
+.missionClass img:nth-child(2), .imageLabel {
+  padding-left: 15vw;
 }
 
 .mission {
   padding-left: 3em;
-  padding-right: 9em;
+  padding-right: 290px;
   margin-right: 50px;
 }
+
 
 input[type=submit] {
     width: 100%;
@@ -110,11 +111,55 @@ div a:hover {
   color: #096c96;
 }
 
-@media screen and (min-width: 1000px) {
-  .missionClass { display: block; float: left;}
+.imageLabel {
+  font-size: 20px;
 }
 
-@media screen and (max-width: 600px) {
+.header div:last-child {
+  margin-left: auto;
+}
+
+footer p {
+  font-size: 11px;
+  font-family: Trebuchet MS;
+}
+
+@media screen and (max-width: 1230px) {
+  .missionClass img:nth-child(2) {
+    margin: 0;
+    padding: 0;
+    margin-left: -200px;
+  }
+
+  img {
+    margin-left: -30px;
+  }
+
+  .mission {
+    font-size: 1.2em;
+    margin-bottom: 0;
+    padding-left: 105px;
+  }
+
+  .imageLabel {
+    font-size: 1em;
+    padding: 0;
+    margin-top: -7px;
+    margin-left: -200px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  img {
+    margin-left: -50px
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .missionClass {
+    display: none;
+  }
+
   body {
 		display: block;
 	  margin-top: 6px;
@@ -137,13 +182,4 @@ div a:hover {
     z-index: 100;
     margin-top: 20px;
   }
-}
-
-.header div:last-child {
-  margin-left: auto;
-  /* color: #096c96; */
-}
-
-footer p {
-  font-size: 11px;
 }

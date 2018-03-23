@@ -22,18 +22,23 @@ body {
   padding-bottom: 10px;
 }
 
-p {
+.aboutInfo p {
   font-size: 35px;
   color: black;
   font-family: Trebuchet MS;
+  margin: 10px 50px 10px 50px;
 }
 
 div a {
-  font-size: 35px;
+  font-size: 30px;
   font-weight: bold;
   font-family: Trebuchet MS;
   color: #004562;
   text-decoration: none;
+}
+
+p a {
+  font-size: 35px;
 }
 
 .footer {
@@ -41,6 +46,7 @@ div a {
   bottom:0;
   width:100%;
   z-index: -1;
+  font-family: Trebuchet MS;
 }
 
 div a:hover {
@@ -56,10 +62,6 @@ footer p {
   font-size: 11px;
 }
 
-div p {
-  margin: 10px 50px 10px 50px;
-}
-
 @media screen and (max-width: 600px) {
   body {
 		display: block;
@@ -72,7 +74,7 @@ div p {
 		background-size: 100vw 100vh;
 	}
 
-  div p {
+  .aboutInfo p {
     font-size: 1.5em;
   }
 
@@ -82,11 +84,9 @@ div p {
 }
 
 @media screen and (max-height: 440px) {
-  div p {
+  .aboutInfo p {
     font-size: 1.5em;
   }
-
-
 }
 
 @media screen and (max-height: 350px) {

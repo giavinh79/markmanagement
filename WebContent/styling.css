@@ -106,13 +106,9 @@ td {
 	position: relative;
 }
 
-/* .footer {
-  position:absolute;
-  bottom:0;
-  width:100%;
-} */
 .footer {
 	display: none;
+	font-family: Trebuchet MS;
 }
 
 footer p {
@@ -185,4 +181,3 @@ p {
 		width:100%;
 	}
 }
-
