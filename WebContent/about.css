@@ -1,0 +1,100 @@
+@CHARSET "ISO-8859-1";
+
+body {
+  background-image: url("aboutBackground.png");
+  margin-top: 6px;
+  margin-left: 0px;
+  margin-right: 0px;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-color: rgb(35, 176, 168);
+  background-size: calc(130vw * 0.9) 100vh;
+}
+
+.header {
+  display: flex;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Trebuchet MS;
+  color: #004562;
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+p {
+  font-size: 35px;
+  color: black;
+  font-family: Trebuchet MS;
+}
+
+div a {
+  font-size: 35px;
+  font-weight: bold;
+  font-family: Trebuchet MS;
+  color: #004562;
+  text-decoration: none;
+}
+
+.footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  z-index: -1;
+}
+
+div a:hover {
+  color: #096c96;
+}
+
+.header div:last-child {
+  margin-left: auto;
+  /* color: #096c96; */
+}
+
+footer p {
+  font-size: 11px;
+}
+
+div p {
+  margin: 10px 50px 10px 50px;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+		display: block;
+	  margin-top: 6px;
+	  margin-left: 0px;
+	  margin-right: 0px;
+	  background-image: url("phoneWallpaperAbout.png");
+  	background-repeat: no-repeat;
+		background-color: rgb(35, 176, 168);
+		background-size: 100vw 100vh;
+	}
+
+  div p {
+    font-size: 1.5em;
+  }
+
+  a {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-height: 440px) {
+  div p {
+    font-size: 1.5em;
+  }
+
+
+}
+
+@media screen and (max-height: 350px) {
+  .footer {
+    display: none;
+  }
+
+  body {
+    background-image: none;
+  }
+}
