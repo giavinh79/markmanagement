@@ -74,6 +74,15 @@ footer p {
 		background-size: 100vw 100vh;
 	}
 
+  div a {
+    font-size: 20px;
+  }
+
+  .header {
+    padding-top: 0px;
+    padding-bottom: 5px;
+  }
+
   .aboutInfo p {
     font-size: 1.5em;
   }

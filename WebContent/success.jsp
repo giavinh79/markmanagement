@@ -3,6 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 function validateForm() {
@@ -11,7 +12,7 @@ function validateForm() {
 	var y = document.forms["gradeForm"]["courseInput"].value;
 	//numRows = numElements / 4 columns
 	//alert(numElements/4);
-	
+
 	//alert(nameTest);
 
 	if (x == "") {
@@ -26,9 +27,9 @@ function validateForm() {
 		if (parseInt(x) > 100 || parseInt(x) < 0) {
 			alert("Grade must be between 0 and 100.");
 			return false;
-		}  
+		}
 	 }
-	
+
 	if (y == "") {
 		alert("Course must be filled out");
 		return false;
@@ -44,7 +45,7 @@ function validateForm() {
 	    	alert("Course too long. Must be less than 30 characters.");
 	        return false;
 	 }
-	
+
 	var placeholder = numElements/4;
 
 	for (var w = 0; w < placeholder; w++)
@@ -65,7 +66,7 @@ function deleteRow(o) {
 	//alert(p);
 	//alert(c);
 	//alert(d);
-    
+
 	var idVar = ${personID};
 
 	//jquery
@@ -77,10 +78,10 @@ function deleteRow(o) {
 			//window.location.replace("DynamicStudent");
 		});
 	});
-	
+
     var p=o.parentNode.parentNode;
     p.parentNode.removeChild(p);
-    
+
     var lastIndex = document.getElementById("test13").innerHTML.lastIndexOf("g");
     //alert("hi");
     var string = document.getElementById("test13").innerHTML.substring(0, lastIndex);
@@ -100,8 +101,8 @@ function deleteRow(o) {
 
     //var number = parseInt(string.charAt(string.length - 3)) - 1;
     //alert(number);
-    
-    
+
+
     	//alert(data);
     	//alert(data.redirect);
     	//window.location.replace(data.redirect);
@@ -113,7 +114,7 @@ function deleteRow(o) {
 	//window.location.replace("DynamicStudent");
     	/*
         var receivedData = [];
-        
+
 		alert("hey");
         $.each(data.jsonArray, function(index) {
             $.each(data.jsonArray[index], function(key, value) {
@@ -123,13 +124,13 @@ function deleteRow(o) {
                     point.push(value);
                     receivedData.push(point);
 
-                }); 
+                });
         });
 		alert("hey");
 		alert(receivedData);
         alert(receivedData[0]);
         */
-    
+
     <% //response.sendRedirect("DynamicStudent");%>
 	<% //response.sendRedirect("DeleteGrade"); %>
 }
@@ -174,7 +175,7 @@ function fillStatistics() {
 	{
 		meanDiv.innerHTML = (orderedGrades[orderedGrades.length / 2] + orderedGrades[orderedGrades.length / 2 - 1]) / 2;
 	}
-	else 
+	else
 	{
 		meanDiv.innerHTML = orderedGrades[orderedGrades.length / 2];
 	}
@@ -268,7 +269,7 @@ function printtoTable(c, g, y) {
 	var string = "";
 	for (var z = 0; z < array.length; z++)
 	{
-		var string = string + array[z];	
+		var string = string + array[z];
 	} //document.getElementById("demo").innerHTML = string;
 	document.getElementById("demo").innerHTML = '${test}';
 	*/
