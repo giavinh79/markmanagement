@@ -3,203 +3,200 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript">
-function validateForm() {
-	var numElements = document.getElementById("printTable").getElementsByTagName("td").length;
-	var x = document.forms["gradeForm"]["gradeInput"].value;
-	var y = document.forms["gradeForm"]["courseInput"].value;
-	//numRows = numElements / 4 columns
-	//alert(numElements/4);
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Homepage</title>
+	<link href="styleLogin.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
 
-	//alert(nameTest);
+	function validateForm() {
+		var numElements = document.getElementById("printTable").getElementsByTagName("td").length;
+		var x = document.forms["gradeForm"]["gradeInput"].value;
+		var y = document.forms["gradeForm"]["courseInput"].value;
 
-	if (x == "") {
-		alert("Grade must be filled out");
-		return false;
-	}
-
-	if (isNaN(x)) {
-		alert("Grade must be a number.");
-		return false;
-	} else {
-		if (parseInt(x) > 100 || parseInt(x) < 0) {
-			alert("Grade must be between 0 and 100.");
+		if (x == "") {
+			alert("Grade must be filled out");
 			return false;
 		}
-	 }
 
-	if (y == "") {
-		alert("Course must be filled out");
-		return false;
-	} else if (y == "N/A") {
-		alert("Invalid course name 'N\A'.");
-		return false;
-	} else if (y.indexOf('\\') != -1) {
-		alert("Backslash character is not allowed.");
-		return false;
-	}
+		if (isNaN(x)) {
+			alert("Grade must be a number.");
+			return false;
+		} else {
+			if (parseInt(x) > 100 || parseInt(x) < 0) {
+				alert("Grade must be between 0 and 100.");
+				return false;
+			}
+		 }
 
-	 if (y.length > 30) {
-	    	alert("Course too long. Must be less than 30 characters.");
-	        return false;
-	 }
+		if (y == "") {
+			alert("Course must be filled out");
+			return false;
+		} else if (y == "N/A") {
+			alert("Invalid course name 'N\A'.");
+			return false;
+		} else if (y.indexOf('\\') != -1) {
+			alert("Backslash character is not allowed.");
+			return false;
+		}
 
-	var placeholder = numElements/4;
+		 if (y.length > 30) {
+		    	alert("Course too long. Must be less than 30 characters.");
+		        return false;
+		 }
 
-	for (var w = 0; w < placeholder; w++)
-	{
-		nameTest = document.getElementById("printTable").childNodes[3+w].childNodes[0].childNodes[0].innerHTML;
-		if (nameTest.toLowerCase() == y.toLowerCase())
+		var placeholder = numElements/4;
+
+		for (var w = 0; w < placeholder; w++)
 		{
-			alert("That course already exists, try to include course codes!");
-			return false;
+			nameTest = document.getElementById("printTable").childNodes[3+w].childNodes[0].childNodes[0].innerHTML;
+			if (nameTest.toLowerCase() == y.toLowerCase())
+			{
+				alert("That course already exists, try to include course codes!");
+				return false;
+			}
 		}
 	}
-}
 
-function deleteRow(o) {
-	var c=o.parentNode.parentNode.childNodes[0].innerHTML;
-	//var c=o.parentNode.parentNode.childNodes[1].innerHTML;
-	//var d=o.parentNode.parentNode.childNodes[2].innerHTML;
-	//alert(p);
-	//alert(c);
-	//alert(d);
+	function deleteRow(o) {
+		var c=o.parentNode.parentNode.childNodes[0].innerHTML;
+		//var c=o.parentNode.parentNode.childNodes[1].innerHTML;
+		//var d=o.parentNode.parentNode.childNodes[2].innerHTML;
+		//alert(p);
+		//alert(c);
+		//alert(d);
 
-	var idVar = ${personID};
+		var idVar = ${personID};
 
-	//jquery
-	$(document).ready(function(){
-		$.post('DeleteGrade', {varName : c, varID : idVar}, function(data){
-			//alert(data);
-			<% //request.getRequestDispatcher("DynamicStudent").forward(request, response); %>
-			<% //request.getRequestDispatcher("DynamicStudent").forward(request, response); %>
-			//window.location.replace("DynamicStudent");
+		//jquery
+		$(document).ready(function(){
+			$.post('DeleteGrade', {varName : c, varID : idVar}, function(data){
+				//alert(data);
+				<% //request.getRequestDispatcher("DynamicStudent").forward(request, response); %>
+				<% //request.getRequestDispatcher("DynamicStudent").forward(request, response); %>
+				//window.location.replace("DynamicStudent");
+			});
 		});
-	});
 
-    var p=o.parentNode.parentNode;
-    p.parentNode.removeChild(p);
+	    var p=o.parentNode.parentNode;
+	    p.parentNode.removeChild(p);
 
-    var lastIndex = document.getElementById("test13").innerHTML.lastIndexOf("g");
-    //alert("hi");
-    var string = document.getElementById("test13").innerHTML.substring(0, lastIndex);
-    //alert(document.getElementById("test13").innerHTML);
-	//alert(string);
-	//alert(string.length);
-    //alert(document.getElementById("test13").value)
-    //alert(document.getElementById("test12").value);
+	    var lastIndex = document.getElementById("test13").innerHTML.lastIndexOf("g");
+	    //alert("hi");
+	    var string = document.getElementById("test13").innerHTML.substring(0, lastIndex);
+	    //alert(document.getElementById("test13").innerHTML);
+		//alert(string);
+		//alert(string.length);
+	    //alert(document.getElementById("test13").value)
+	    //alert(document.getElementById("test12").value);
 
-    //alert(string.charAt(string.length - 3)); //1
-    lastIndex = string.lastIndexOf(string.charAt(string.length - 3));
-    var numberTwo = string.charAt(string.length - 3) - 1;
-    //alert(numberTwo);
-	//alert(lastIndex);
-    var newString = string.substring(0, lastIndex);
-    document.getElementById("test13").innerHTML = newString + numberTwo + " grades entered.";
+	    //alert(string.charAt(string.length - 3)); //1
+	    lastIndex = string.lastIndexOf(string.charAt(string.length - 3));
+	    var numberTwo = string.charAt(string.length - 3) - 1;
+	    //alert(numberTwo);
+		//alert(lastIndex);
+	    var newString = string.substring(0, lastIndex);
+	    document.getElementById("test13").innerHTML = newString + numberTwo + " grades entered.";
 
-    //var number = parseInt(string.charAt(string.length - 3)) - 1;
-    //alert(number);
+	    //var number = parseInt(string.charAt(string.length - 3)) - 1;
+	    //alert(number);
 
 
-    	//alert(data);
-    	//alert(data.redirect);
-    	//window.location.replace(data.redirect);
-    	//var myObject = JSON.parse(data);
-    	//alert(myObject[0]);
-    	//alert(myObject);
-    	//var test = JSON.stringify(data);
-    	//window.location.replace("DeleteGrade");
-	//window.location.replace("DynamicStudent");
-    	/*
-        var receivedData = [];
+	    	//alert(data);
+	    	//alert(data.redirect);
+	    	//window.location.replace(data.redirect);
+	    	//var myObject = JSON.parse(data);
+	    	//alert(myObject[0]);
+	    	//alert(myObject);
+	    	//var test = JSON.stringify(data);
+	    	//window.location.replace("DeleteGrade");
+		//window.location.replace("DynamicStudent");
+	    	/*
+	        var receivedData = [];
 
-		alert("hey");
-        $.each(data.jsonArray, function(index) {
-            $.each(data.jsonArray[index], function(key, value) {
-                var point = [];
+			alert("hey");
+	        $.each(data.jsonArray, function(index) {
+	            $.each(data.jsonArray[index], function(key, value) {
+	                var point = [];
 
-                    point.push(key);
-                    point.push(value);
-                    receivedData.push(point);
+	                    point.push(key);
+	                    point.push(value);
+	                    receivedData.push(point);
 
-                });
-        });
-		alert("hey");
-		alert(receivedData);
-        alert(receivedData[0]);
-        */
+	                });
+	        });
+			alert("hey");
+			alert(receivedData);
+	        alert(receivedData[0]);
+	        */
 
-    <% //response.sendRedirect("DynamicStudent");%>
-	<% //response.sendRedirect("DeleteGrade"); %>
-}
+	    <% //response.sendRedirect("DynamicStudent");%>
+		<% //response.sendRedirect("DeleteGrade"); %>
+	}
 
-function parseGrades(arrayString) {
-	var gradeArray = new Array();
-	gradeArray = arrayString.split("`");
-	return gradeArray;
-}
+	function parseGrades(arrayString) {
+		var gradeArray = new Array();
+		gradeArray = arrayString.split("`");
+		return gradeArray;
+	}
 
-function parseYears(arrayString) {
-	var yearArray = new Array();
-	yearArray = arrayString.split("`");
-	return yearArray;
-}
+	function parseYears(arrayString) {
+		var yearArray = new Array();
+		yearArray = arrayString.split("`");
+		return yearArray;
+	}
 
-function fillStatistics() {
-	var table = document.getElementById("printTable");
-	var avgDiv, meanDiv;
-	var orderedGrades = []; //dynamic array
-	avgDiv = document.getElementById("average");
-	meanDiv = document.getElementById("median");
-	var average = 0, mean = 0;
-	for (var i = 1, row; row = table.rows[i]; i++) {
-		for (var j = 0, col; col = row.cells[j]; j++) {
-			if (j == 1)
-		   	{
-		   		//alert(row.cells[j].innerHTML);
-		   		//alert(row.cells[j].innerHTML);
-		   		average += parseInt(row.cells[j].innerHTML);
-		   		orderedGrades.push(parseInt(row.cells[j].innerHTML));
+	function fillStatistics() {
+		var table = document.getElementById("printTable");
+		var avgDiv, meanDiv;
+		var orderedGrades = []; //dynamic array
+		avgDiv = document.getElementById("average");
+		meanDiv = document.getElementById("median");
+		var average = 0, mean = 0;
+		for (var i = 1, row; row = table.rows[i]; i++) {
+			for (var j = 0, col; col = row.cells[j]; j++) {
+				if (j == 1)
+			   	{
+			   		//alert(row.cells[j].innerHTML);
+			   		//alert(row.cells[j].innerHTML);
+			   		average += parseInt(row.cells[j].innerHTML);
+			   		orderedGrades.push(parseInt(row.cells[j].innerHTML));
+			   	}
+		     //iterate through columns
+		     //columns would be accessed using the "col" variable assigned in the for loop
 		   	}
-	     //iterate through columns
-	     //columns would be accessed using the "col" variable assigned in the for loop
-	   	}
+		}
+		average = average / table.rows[0].cells.length;
+		avgDiv.innerHTML = average;
+		orderedGrades.sort();
+		//alert(orderedGrades);
+		if (orderedGrades.length % 2 == 0)
+		{
+			meanDiv.innerHTML = (orderedGrades[orderedGrades.length / 2] + orderedGrades[orderedGrades.length / 2 - 1]) / 2;
+		}
+		else
+		{
+			meanDiv.innerHTML = orderedGrades[orderedGrades.length / 2];
+		}
 	}
-	average = average / table.rows[0].cells.length;
-	avgDiv.innerHTML = average;
-	orderedGrades.sort();
-	//alert(orderedGrades);
-	if (orderedGrades.length % 2 == 0)
-	{
-		meanDiv.innerHTML = (orderedGrades[orderedGrades.length / 2] + orderedGrades[orderedGrades.length / 2 - 1]) / 2;
-	}
-	else
-	{
-		meanDiv.innerHTML = orderedGrades[orderedGrades.length / 2];
-	}
-}
 
-function printtoTable(c, g, y) {
-	if (c.length < 2) //test for courses with 1 letter
-	{
-		document.getElementById("printTable").innerHTML += "<tr>" + "<td>" + "N/A" + "</td>" + "<td>" + "N/A" + "</td>" + "<td>" + "N/A" + "</td>" + "</tr>";
-	}
-	var courseArray = c.split("`");
-	//document.getElementById("demo").innerHTML += courseString;
-	//alert("hello");
+	function printtoTable(c, g, y) {
+		if (c.length < 2) //test for courses with 1 letter
+		{
+			document.getElementById("printTable").innerHTML += "<tr>" + "<td>" + "N/A" + "</td>" + "<td>" + "N/A" + "</td>" + "<td>" + "N/A" + "</td>" + "</tr>";
+		}
+		var courseArray = c.split("`");
+		//document.getElementById("demo").innerHTML += courseString;
+		//alert("hello");
 
-	for (var d = 0; d < courseArray.length-1; d++)
-	{
-		//alert(g[d])
-		document.getElementById("printTable").innerHTML += "<tr>" + "<td>" + courseArray[d] + "</td>" + "<td>" + g[d] + "</td>" + "<td>" + y[d] + "</td>" + "<td>" + "<button onclick='deleteRow(this)'>Delete</button></td>" + "</tr>";
+		for (var d = 0; d < courseArray.length-1; d++)
+		{
+			//alert(g[d])
+			document.getElementById("printTable").innerHTML += "<tr>" + "<td>" + courseArray[d] + "</td>" + "<td>" + g[d] + "</td>" + "<td>" + y[d] + "</td>" + "<td>" + "<button onclick='deleteRow(this)'>Delete</button></td>" + "</tr>";
+		}
 	}
-}
-</script>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Homepage</title>
-<link href="styleLogin.css" rel="stylesheet">
+	</script>
 </head>
 <body>
 	<div class="header">
@@ -249,7 +246,7 @@ function printtoTable(c, g, y) {
 </div><br>
 
 <br>
-<div style="height: 200px; width: 200px; background-color: white; color: black; margin-left: 200px;">
+<div style="height: 200px; width: 200px; background-color: white; color: black; margin-left: 200px; display: none;">
 	Average: <div id="average" style="color:black;"></div><br>
 	Median: <div id="median" style="color:black;"></div><br>
 </div>
