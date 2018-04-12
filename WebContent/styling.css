@@ -1,6 +1,5 @@
 @CHARSET "ISO-8859-1";
 
-
 body {
 	display: block;
   margin-top: 6px;
@@ -14,7 +13,7 @@ body {
 }
 
 h1, h2 {
-	font-family: Arial;
+	font-family: Trebuchet MS;
 	color: BLACK;
 	text-align: center;
 	margin-top: 5px;
@@ -45,8 +44,10 @@ input[type=submit] {
     background-color: #40ad44;
     color: white;
     padding: 5px 10px;
+		margin: 2px 0;
+		margin-left: -3px;
     font-size: 15px;
-    margin: 2px 0;
+		text-align: center;
     border: none;
     border-radius: 2px;
     cursor: pointer;
@@ -137,7 +138,7 @@ p {
 	}
 
 	h1, h2 {
-		font-family: Arial;
+		font-family: Trebuchet MS;
 		color: BLACK;
 		text-align: center;
 		margin-top: 5px;
@@ -171,7 +172,7 @@ p {
 	}
 
 	h1, h2 {
-		font-family: Arial;
+		font-family: Trebuchet MS;
 		color: BLACK;
 		text-align: center;
 		margin-top: 5px;
