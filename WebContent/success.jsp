@@ -83,11 +83,10 @@
 	    p.parentNode.removeChild(p);
 
 	    var lastIndex = document.getElementById("test13").innerHTML.lastIndexOf("g");
-	    //alert("hi");
 	    var string = document.getElementById("test13").innerHTML.substring(0, lastIndex);
 	    //alert(document.getElementById("test13").innerHTML);
-		//alert(string);
-		//alert(string.length);
+			//alert(string);
+			//alert(string.length);
 	    //alert(document.getElementById("test13").value)
 	    //alert(document.getElementById("test12").value);
 
@@ -101,18 +100,16 @@
 
 	    //var number = parseInt(string.charAt(string.length - 3)) - 1;
 	    //alert(number);
-
-
-	    	//alert(data);
-	    	//alert(data.redirect);
-	    	//window.location.replace(data.redirect);
-	    	//var myObject = JSON.parse(data);
-	    	//alert(myObject[0]);
-	    	//alert(myObject);
-	    	//var test = JSON.stringify(data);
-	    	//window.location.replace("DeleteGrade");
-		//window.location.replace("DynamicStudent");
-	    	/*
+    	//alert(data);
+    	//alert(data.redirect);
+    	//window.location.replace(data.redirect);
+    	//var myObject = JSON.parse(data);
+    	//alert(myObject[0]);
+    	//alert(myObject);
+    	//var test = JSON.stringify(data);
+    	//window.location.replace("DeleteGrade");
+			//window.location.replace("DynamicStudent");
+    	/*
 	        var receivedData = [];
 
 			alert("hey");
@@ -158,19 +155,14 @@
 			for (var j = 0, col; col = row.cells[j]; j++) {
 				if (j == 1)
 			   	{
-			   		//alert(row.cells[j].innerHTML);
-			   		//alert(row.cells[j].innerHTML);
 			   		average += parseInt(row.cells[j].innerHTML);
 			   		orderedGrades.push(parseInt(row.cells[j].innerHTML));
 			   	}
-		     //iterate through columns
-		     //columns would be accessed using the "col" variable assigned in the for loop
 		   	}
 		}
 		average = average / table.rows[0].cells.length;
 		avgDiv.innerHTML = average;
 		orderedGrades.sort();
-		//alert(orderedGrades);
 		if (orderedGrades.length % 2 == 0)
 		{
 			meanDiv.innerHTML = (orderedGrades[orderedGrades.length / 2] + orderedGrades[orderedGrades.length / 2 - 1]) / 2;
@@ -187,12 +179,9 @@
 			document.getElementById("printTable").innerHTML += "<tr>" + "<td>" + "N/A" + "</td>" + "<td>" + "N/A" + "</td>" + "<td>" + "N/A" + "</td>" + "</tr>";
 		}
 		var courseArray = c.split("`");
-		//document.getElementById("demo").innerHTML += courseString;
-		//alert("hello");
 
 		for (var d = 0; d < courseArray.length-1; d++)
 		{
-			//alert(g[d])
 			document.getElementById("printTable").innerHTML += "<tr>" + "<td>" + courseArray[d] + "</td>" + "<td>" + g[d] + "</td>" + "<td>" + y[d] + "</td>" + "<td>" + "<button onclick='deleteRow(this)'>Delete</button></td>" + "</tr>";
 		}
 	}
@@ -200,8 +189,8 @@
 </head>
 <body>
 	<div class="header">
-    	<div><a href="index.html  ">&nbsp&nbspHOME&nbsp&nbsp&nbsp</a></div>
-    	<div><a>ABOUT&nbsp&nbsp&nbsp</a></div>
+    	<div><a href="index.html">&nbsp&nbspHOME&nbsp&nbsp&nbsp</a></div>
+    	<div><a href="about.html">ABOUT&nbsp&nbsp&nbsp</a></div>
     	<div><a>HELP&nbsp&nbsp&nbsp</a></div>
     	<div><a href="index.html">LOG OUT&nbsp&nbsp&nbsp</a></div>
   	</div>
@@ -212,44 +201,43 @@
 	<div id="testerino"></div>
 	<p id="demo"></p>
 
-
 	<div class="tableO">
-	<table border="1" cellpadding="3" id="printTable">
-		<tbody>
-			<tr>
-				<th>Course</th>
-				<th>Grade</th>
-				<th>Year</th>
-				<th>Remove Grade</th>
-			</tr>
-		</tbody>
-	</table>
-</div>
+		<table border="1" cellpadding="3" id="printTable">
+			<tbody>
+				<tr>
+					<th>Course</th>
+					<th>Grade</th>
+					<th>Year</th>
+					<th>Remove Grade</th>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 
-<div class="formO">
-	<form name="gradeForm" onsubmit="return validateForm()" method="post"
-		action="AddGrade?id=<%= request.getAttribute("personID") %>">
-		<div style="float:left; padding-right: 5px;">Grade: <input style="padding-right: 10px" type="text" name="gradeInput" /> <br />
-		Course: <input style="padding-right: 4px;" type="text" name="courseInput" /> <br /></div>
-			Label: <select id="year" name="yearInput">
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-			</select><br />
-		<input type="submit" value="Submit" />
-	</form>
-</div><br>
+	<div class="formO">
+		<form name="gradeForm" onsubmit="return validateForm()" method="post"
+			action="AddGrade?id=<%= request.getAttribute("personID") %>">
+			<div style="float:left; padding-right: 5px;">Grade: <input style="padding-right: 10px" type="text" name="gradeInput" /> <br />
+			Course: <input style="padding-right: 4px;" type="text" name="courseInput" /> <br /></div>
+				Label: <select id="year" name="yearInput">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+				</select><br />
+			<input type="submit" value="Submit" />
+		</form>
+	</div><br>
 
-<br>
-<div style="height: 200px; width: 200px; background-color: white; color: black; margin-left: 200px; display: none;">
-	Average: <div id="average" style="color:black;"></div><br>
-	Median: <div id="median" style="color:black;"></div><br>
-</div>
+	<br>
+	<div style="height: 200px; width: 200px; background-color: white; color: black; margin-left: 200px; display: none;">
+		Average: <div id="average" style="color:black;"></div><br>
+		Median: <div id="median" style="color:black;"></div><br>
+	</div>
 
 	<script>
 		var foo = '${test}';
@@ -262,14 +250,6 @@
 
 	<script>
 		fillStatistics();
-/*
-	var string = "";
-	for (var z = 0; z < array.length; z++)
-	{
-		var string = string + array[z];
-	} //document.getElementById("demo").innerHTML = string;
-	document.getElementById("demo").innerHTML = '${test}';
-	*/
 	</script>
 
 	<p id="blah">To do: Be able to enter a grade and a course. Have statistics
